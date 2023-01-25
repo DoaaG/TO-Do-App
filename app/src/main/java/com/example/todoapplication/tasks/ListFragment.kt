@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.todoapplication.database.MyDataBase
 import com.example.todoapplication.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -15,5 +16,10 @@ class ListFragment : Fragment() {
     ): View? {
         listBinding = FragmentListBinding.inflate(inflater,container,false)
         return listBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {  //step(4) read from database
+        super.onViewCreated(view, savedInstanceState)
+        MyDataBase.getDataBase(requireActivity()).tasksDao().getAllTasks()
     }
 }
