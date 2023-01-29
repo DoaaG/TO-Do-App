@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.todoapplication.databinding.FragmentFloatingButtonBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class FloatingButtonFragment : BottomSheetDialogFragment() {
+class FloatingButtonFragment : Fragment() {
     lateinit var FloatinButtonbinding:FragmentFloatingButtonBinding
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -22,9 +22,6 @@ class FloatingButtonFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        FloatinButtonbinding.addTaskFloatingButton.setOnClickListener{
-            val fragment = FloatingButtonFragment()
-            fragment.show(childFragmentManager,"")
-        }
+//
     }
 }
