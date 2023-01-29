@@ -32,9 +32,10 @@ class HomeActivity : AppCompatActivity() {
             }
             return@setOnItemSelectedListener true
         }
-//        homeBinding.includeFloatingBtn.addTaskFloatingButton.setOnClickListener{
-//            showFragment(FloatingButtonFragment())
-//        }
+        homeBinding.includeFloatingBtn.addTaskFloatingButton.setOnClickListener{
+            val fragment = AddTaskFragment()
+            fragment.show(supportFragmentManager,"")
+        }
 
     }
 
