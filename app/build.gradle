@@ -37,7 +37,8 @@ android {
 }
 
 dependencies {
-
+//    implementation 'tk.jamun-ktx.ui:pickers: 0.0.8'  // for pickers
+//    implementation 'tk.jamun.ui:language:0.0.1'  // for language_picker
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.6.0'
     implementation 'com.google.android.material:material:1.7.0'
