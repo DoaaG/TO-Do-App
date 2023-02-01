@@ -15,5 +15,8 @@ interface TaskDao {
     fun updateTask(task: Task)
 
     @Query("select * from tasks")
-    fun getAllTasks():List<Task>
+    fun getAllTasks(): List<Task>
+
+    @Query("select * from tasks where date=:selectedDate")
+    fun getTasksByDate(selectedDate: Long): List<Task>
 }

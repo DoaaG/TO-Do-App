@@ -5,4 +5,6 @@
     <string name="enteryourtask">Enter your task</string>
     <string name="selecttime">Select time</string>
     <string name="taskdescription">Task Description</string>
+    <string name="ok">Ok</string>
+    <string name="TaskInsertedSuccessfully">Task Inserted Successfully</string>
 </resources>
