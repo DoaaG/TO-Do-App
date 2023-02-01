@@ -7,13 +7,28 @@
     android:background="@color/leaf_print_light_green"
     tools:context=".tasks.ListFragment">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/task_item_recycler"
         app:layout_constraintTop_toTopOf="parent"
+        app:mcv_selectionColor="@color/light_blue"
+        app:mcv_showOtherDates="all"
+        app:mcv_arrowColor="@color/black"
+        app:mcv_headerTextAppearance="@style/calendarHeaderStyle"
+        app:mcv_dateTextAppearance="@style/dateTextStyle"
+        app:mcv_weekDayTextAppearance="@style/weekDayStyle"
+        app:mcv_calendarMode="week"
+        app:mcv_selectionMode="single"/>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/task_item_recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/calendarView"
         tools:listitem="@layout/task_item">
 
     </androidx.recyclerview.widget.RecyclerView>

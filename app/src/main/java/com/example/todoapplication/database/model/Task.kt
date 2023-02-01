@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "tasks")            //step(1) create table
 data class Task(
-    @PrimaryKey var id:Int? =null,
+    @PrimaryKey(autoGenerate = true) var id:Int? =null,
     @ColumnInfo var title:String? =null,    // add as a column
     @ColumnInfo var description:String? =null,
     @ColumnInfo var date:Long? =null,

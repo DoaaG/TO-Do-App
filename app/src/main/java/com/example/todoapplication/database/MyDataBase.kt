@@ -10,7 +10,7 @@ import com.example.todoapplication.database.model.Task
 //step(3) what database need
 @Database(
     entities = [Task::class],
-    version = 1, //changed when add new column
+    version = 2, //changed when add new column
     exportSchema = false  // save schema in jason file instead of generating every time
 )
 abstract class MyDataBase : RoomDatabase() {
