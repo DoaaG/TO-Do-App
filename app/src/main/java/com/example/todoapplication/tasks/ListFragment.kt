@@ -18,8 +18,4 @@ class ListFragment : Fragment() {
         return listBinding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {  //step(4) read from database
-        super.onViewCreated(view, savedInstanceState)
-        MyDataBase.getDataBase(requireActivity()).tasksDao().getAllTasks()
-    }
 }

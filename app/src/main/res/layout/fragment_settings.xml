@@ -27,7 +27,7 @@
         android:layout_marginHorizontal="55dp"
         android:layout_marginTop="8dp"
         android:background="@color/white"
-        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintHeight_percent="0.09"
         app:layout_constraintTop_toBottomOf="@id/language_textView" />
 
     <TextView
@@ -49,11 +49,11 @@
         android:text="Light"
         style="@style/setting_selection_box"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.07"
+        app:layout_constraintHeight_percent="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mode_textView" />
 
-    <!--    <include-->
-    <!--        layout="@layout/fragment_floating_button" />-->
-    <!--    -->
+<!--        <include-->
+<!--            layout="@layout/fragment_floating_button" />-->
+
 </androidx.constraintlayout.widget.ConstraintLayout>

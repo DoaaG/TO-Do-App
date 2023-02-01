@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".home.AddTaskFragment">
 
     <TextView
@@ -37,10 +37,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/date_editText_TextInputLayout"
+        android:id="@+id/descriptiontask_editText_TextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/selecttime"
+        android:hint="@string/taskdescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/entertask_editText_TextInputLayout"
@@ -48,10 +48,34 @@
         android:textColorHint="@color/black">
 
         <EditText
+            android:id="@+id/descriptiontask_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:background="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date_editText_TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/selecttime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptiontask_editText_TextInputLayout"
+        app:hintTextColor="@color/light_blue"
+        android:textColorHint="@color/black">
+
+        <TextView
             android:id="@+id/date_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
+            android:hint="Task date"
+            android:textColorHint="@color/black"
+            android:padding="12dp"
             android:background="@color/white"
             android:inputType="date"
             android:textSize="22sp"
@@ -63,9 +87,9 @@
         style="@style/savechanges_button_style"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
         android:text="Save Task"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/date_editText_TextInputLayout" />

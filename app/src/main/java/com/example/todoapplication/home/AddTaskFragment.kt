@@ -1,27 +1,92 @@
 package com.example.todoapplication.home
 
+import android.app.DatePickerDialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.todoapplication.R
+import android.widget.DatePicker
 import com.example.todoapplication.databinding.FragmentAddTaskBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import java.util.*
 
-class AddTaskFragment  : BottomSheetDialogFragment(){
-    lateinit var bottomsheetbinding :FragmentAddTaskBinding
+class AddTaskFragment : BottomSheetDialogFragment() {
+    lateinit var bottomsheetbinding: FragmentAddTaskBinding
+    var currentDate = Calendar.getInstance()    //return obj of calender type
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       bottomsheetbinding = FragmentAddTaskBinding.inflate(inflater,container,false)
+        bottomsheetbinding = FragmentAddTaskBinding.inflate(inflater, container, false)
         return bottomsheetbinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setDate()
+        bottomsheetbinding.dateEditText.setOnClickListener {
+            showDatePicker() // to show date picker when add new task
+        }
+        bottomsheetbinding.saveAddtaskButton.setOnClickListener {
+            addTask()
+        }
 
+    }
+
+    private fun addTask() {
+        if(isValid() == false){
+            return
+        }
+        val title = bottomsheetbinding.entertaskEditText.text.toString()
+        val description = bottomsheetbinding.descriptiontaskEditText.text.toString()
+    }
+
+    private fun isValid():Boolean {
+        var valid = true
+        val title = bottomsheetbinding.entertaskEditText.text.toString()
+        val description = bottomsheetbinding.descriptiontaskEditText.text.toString()
+        if(title.isNullOrBlank()){
+            valid = false
+            bottomsheetbinding.entertaskEditText.error = "Please Enter a Valid Title"
+        }
+        else{
+            bottomsheetbinding.entertaskEditText.error = null
+        }
+
+        if(description.isNullOrBlank()){
+            valid = false
+            bottomsheetbinding.descriptiontaskEditText.error = "Please Enter a Valid Description"
+        }
+        else{
+            bottomsheetbinding.descriptiontaskEditText.error = null
+        }
+        return valid
+    }
+
+    private fun setDate() {
+        // Date Formatter
+        bottomsheetbinding.dateEditText.setText("" + currentDate.get(Calendar.DAY_OF_MONTH)
+                +"/"+currentDate.get(Calendar.MONTH) +"/"+currentDate.get(Calendar.YEAR))
+    }
+
+    private fun showDatePicker() {
+        // to handel null exception  use context?.let instead of require activity
+        // can remove DatePickerDialog.OnDateSetListener and use only lambda ex
+        context?.let {
+            DatePickerDialog(
+                it,
+                DatePickerDialog.OnDateSetListener { view: DatePicker?, year: Int, month: Int, dayOfMonth: Int ->
+                    currentDate.set(Calendar.YEAR,year)
+                    currentDate.set(Calendar.MONTH,month+1)  // index of month starts with zero
+                    currentDate.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+                    setDate()
+                },
+                currentDate.get(Calendar.YEAR),
+                currentDate.get(Calendar.MONTH),
+                currentDate.get(Calendar.DAY_OF_MONTH)
+            ).show()
+
+        }
     }
 }
