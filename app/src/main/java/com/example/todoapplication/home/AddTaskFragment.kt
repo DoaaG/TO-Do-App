@@ -28,7 +28,40 @@ class AddTaskFragment : BottomSheetDialogFragment() {
         bottomsheetbinding.dateEditText.setOnClickListener {
             showDatePicker() // to show date picker when add new task
         }
+        bottomsheetbinding.saveAddtaskButton.setOnClickListener {
+            addTask()
+        }
 
+    }
+
+    private fun addTask() {
+        if(isValid() == false){
+            return
+        }
+        val title = bottomsheetbinding.entertaskEditText.text.toString()
+        val description = bottomsheetbinding.descriptiontaskEditText.text.toString()
+    }
+
+    private fun isValid():Boolean {
+        var valid = true
+        val title = bottomsheetbinding.entertaskEditText.text.toString()
+        val description = bottomsheetbinding.descriptiontaskEditText.text.toString()
+        if(title.isNullOrBlank()){
+            valid = false
+            bottomsheetbinding.entertaskEditText.error = "Please Enter a Valid Title"
+        }
+        else{
+            bottomsheetbinding.entertaskEditText.error = null
+        }
+
+        if(description.isNullOrBlank()){
+            valid = false
+            bottomsheetbinding.descriptiontaskEditText.error = "Please Enter a Valid Description"
+        }
+        else{
+            bottomsheetbinding.descriptiontaskEditText.error = null
+        }
+        return valid
     }
 
     private fun setDate() {
