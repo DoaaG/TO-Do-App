@@ -1,5 +1,7 @@
 package com.example.todoapplication.tasks
 
+import com.example.todoapplication.database.model.Task
+
 interface onItemClick {
-    fun onCheckClick(position:Int)
+    fun onCheckClick(task: Task)
 }

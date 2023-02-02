@@ -7,4 +7,7 @@
     <string name="taskdescription">Task Description</string>
     <string name="ok">Ok</string>
     <string name="TaskInsertedSuccessfully">Task Inserted Successfully</string>
+    <string name="enterthetitle">Enter The Title</string>
+    <string name="enterthedetails">Enter The Details</string>
+    <string name="selecteditetime">Select time</string>
 </resources>
