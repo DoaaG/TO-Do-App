@@ -12,13 +12,17 @@
         android:theme="@style/Theme.ToDoApplication"
         tools:targetApi="31">
         <activity
-            android:name=".home.HomeActivity"
+            android:name=".settings.EditTaskActivity"
             android:theme="@style/noActionBar"
             android:exported="false" />
         <activity
+            android:name=".home.HomeActivity"
+            android:exported="false"
+            android:theme="@style/noActionBar" />
+        <activity
             android:name=".splash.SplashScreenActivity"
-            android:theme="@style/noActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/noActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

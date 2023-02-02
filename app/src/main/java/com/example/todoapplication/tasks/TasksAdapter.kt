@@ -1,8 +1,11 @@
 package com.example.todoapplication.tasks
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todoapplication.R
 import com.example.todoapplication.database.model.Task
 import com.example.todoapplication.databinding.TaskItemBinding
 
@@ -16,18 +19,27 @@ class TasksAdapter(var list: List<Task>?) : RecyclerView.Adapter<TasksAdapter.Ta
     }
 
     override fun getItemCount(): Int = list?.size ?: 0
-    var itemclicked : onItemClick? = null
+    var itemclicked: onItemClick? = null
+    @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: TasksViewHolder, position: Int) {
-        holder.binding.tasksTextView.text = list?.get(position)?.title
+        holder.binding.tasksTextView.text =
+            list?.get(position)?.title  //      ?.title    because of  List<Task>?  "Task"
         holder.binding.descriptionTextView.text = list?.get(position)?.description
-        holder.binding.checkBtn.setOnClickListener{
-            itemclicked?.onCheckClick(position)
+        holder.binding.checkBtn.setOnClickListener {
+            itemclicked?.onCheckClick(list!!.get(position))
         }
-//        holder.viewBinding.title.text = items?.get(position)?.title        ?.title    because of  List<Task>?  "Task"
-//        holder.viewBinding.desc.text = items?.get(position)?.description  ?.description   because of  List<Task>?  "Task"
+        // update isDone color
+        if (list?.get(position)?.isDone == true) {
+            holder.binding.checkBtn.setBackgroundResource(R.drawable.done_button)
+            holder.binding.tasksTextView.setTextColor(R.color.green)
+            holder.binding.divider.setBackgroundColor(R.color.green)
+            holder.binding.checkBtn.setImageResource(R.drawable.ic_done_all)
+        }
+
     }
-    fun changeData(newListOfTasks :List<Task>?){
-         list = newListOfTasks
+
+    fun changeData(newListOfTasks: List<Task>?) {
+        list = newListOfTasks
         notifyDataSetChanged()   // to refresh the adapter
 
     }

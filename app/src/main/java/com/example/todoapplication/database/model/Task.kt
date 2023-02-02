@@ -3,6 +3,7 @@ package com.example.todoapplication.database.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(tableName = "tasks")            //step(1) create table
 data class Task(
@@ -11,6 +12,4 @@ data class Task(
     @ColumnInfo var description:String? =null,
     @ColumnInfo var date:Long? =null,
     @ColumnInfo var isDone:Boolean =false
-){
-
-}
+): Serializable
