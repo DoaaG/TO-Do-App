@@ -20,6 +20,8 @@ class TasksAdapter(var list: List<Task>?) : RecyclerView.Adapter<TasksAdapter.Ta
 
     override fun getItemCount(): Int = list?.size ?: 0
     var itemclicked: onItemClick? = null
+    var deleteClick : onItemDeleteClick? = null
+
     @SuppressLint("ResourceAsColor")
     override fun onBindViewHolder(holder: TasksViewHolder, position: Int) {
         holder.binding.tasksTextView.text =
@@ -28,11 +30,14 @@ class TasksAdapter(var list: List<Task>?) : RecyclerView.Adapter<TasksAdapter.Ta
         holder.binding.checkBtn.setOnClickListener {
             itemclicked?.onCheckClick(list!!.get(position))
         }
+        holder.binding.cardDelete.setOnClickListener{
+            deleteClick?.onDeleteClick(list!!.get(position))
+        }
         // update isDone color
-        if (list?.get(position)?.isDone == true) {
+        if (list!![position].isDone) {
             holder.binding.checkBtn.setBackgroundResource(R.drawable.done_button)
-            holder.binding.tasksTextView.setTextColor(R.color.green)
-            holder.binding.divider.setBackgroundColor(R.color.green)
+            holder.binding.tasksTextView.setTextColor(Color.GREEN)
+            holder.binding.divider.setBackgroundColor(Color.GREEN)
             holder.binding.checkBtn.setImageResource(R.drawable.ic_done_all)
         }
 
