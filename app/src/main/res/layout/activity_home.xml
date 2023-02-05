@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_print_light_green"
     tools:context=".home.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -42,6 +41,6 @@
 
     <include
         android:id="@+id/include_floating_btn"
-        layout="@layout/fragment_floating_button"/>
+        layout="@layout/fragment_floating_button" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

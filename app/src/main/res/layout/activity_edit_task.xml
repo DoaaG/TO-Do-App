@@ -2,9 +2,9 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_print_light_green"
     tools:context=".settings.EditTaskActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,6 +14,7 @@
 
         <ImageView
             android:id="@+id/back_arrow"
+            style="@style/BackArrowColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -23,11 +24,11 @@
 
         <TextView
             android:id="@+id/todo_textview"
+            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="TO DO List"
-            android:textColor="@color/white"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/back_arrow"
@@ -35,8 +36,8 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-
-    <include android:id="@+id/includeEditTask"
+    <include
+        android:id="@+id/includeEditTask"
         layout="@layout/edit_task_content" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

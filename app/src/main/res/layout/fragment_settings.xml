@@ -2,9 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundColor"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/leaf_print_light_green"
     tools:context=".settings.SettingsFragment">
 
     <TextView
@@ -20,13 +20,12 @@
 
     <TextView
         android:id="@+id/language_textView_select"
+        style="@style/setting_selection_box"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="English"
-        style="@style/setting_selection_box"
         android:layout_marginHorizontal="55dp"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
+        android:text="English"
         app:layout_constraintHeight_percent="0.09"
         app:layout_constraintTop_toBottomOf="@id/language_textView" />
 
@@ -41,19 +40,18 @@
 
     <TextView
         android:id="@+id/mode_textView_select"
+        style="@style/setting_selection_box"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="55dp"
         android:layout_marginTop="8dp"
-        android:background="@color/white"
         android:text="Light"
-        style="@style/setting_selection_box"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.09"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mode_textView" />
 
-<!--        <include-->
-<!--            layout="@layout/fragment_floating_button" />-->
+    <!--        <include-->
+    <!--            layout="@layout/fragment_floating_button" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
