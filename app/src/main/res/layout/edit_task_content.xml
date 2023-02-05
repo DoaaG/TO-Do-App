@@ -9,6 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/edit_task_content_cardview"
+        style="@style/CardViewBackground"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="50dp"
@@ -29,11 +30,11 @@
 
             <TextView
                 android:id="@+id/edit_textview"
+                style="@style/ContentTextColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Edit Task"
-                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,10 +44,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/entertitle_editText_TextInputLayout"
+                style="@style/TextColorHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/enterthetitle"
-                android:textColorHint="@color/black"
                 app:hintTextColor="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,10 +55,10 @@
 
                 <EditText
                     android:id="@+id/title_editText"
+                    style="@style/EditTextBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="@color/white"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/edit_textview" />
@@ -65,10 +66,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/enterdetails_editText_TextInputLayout"
+                style="@style/TextColorHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/enterthedetails"
-                android:textColorHint="@color/black"
                 app:hintTextColor="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,10 +77,10 @@
 
                 <EditText
                     android:id="@+id/details_editText"
+                    style="@style/EditTextBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:background="@color/white"
                     android:textSize="22sp"
                     android:textStyle="bold"
                     app:layout_constraintTop_toBottomOf="@id/title_editText" />
@@ -88,10 +89,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/date_editText_TextInputLayout"
+                style="@style/TextColorHint"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/selecteditetime"
-                android:textColorHint="@color/black"
                 app:hintTextColor="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -99,10 +100,10 @@
 
                 <EditText
                     android:id="@+id/date_editText"
+                    style="@style/EditTextBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
-                    android:background="@color/white"
                     android:inputType="date"
                     android:textSize="22sp"
                     android:textStyle="bold"
