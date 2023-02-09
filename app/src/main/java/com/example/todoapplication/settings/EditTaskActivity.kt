@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class EditTaskActivity : AppCompatActivity() {
-    var currentDate = Calendar.getInstance()
     private lateinit var editBinding: ActivityEditTaskBinding
     private lateinit var task: Task
 

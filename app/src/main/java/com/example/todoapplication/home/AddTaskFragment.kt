@@ -2,7 +2,6 @@ package com.example.todoapplication.home
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,13 +11,14 @@ import com.example.todoapplication.R
 import com.example.todoapplication.database.MyDataBase
 import com.example.todoapplication.database.model.Task
 import com.example.todoapplication.databinding.FragmentAddTaskBinding
-import com.example.todoapplication.databinding.FragmentListBinding
+import com.example.todoapplication.tasks.ListFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import java.util.*
+import java.util.Calendar
 
 class AddTaskFragment : BottomSheetDialogFragment() {
     lateinit var bottomsheetbinding: FragmentAddTaskBinding
     var currentDate = Calendar.getInstance()    //return obj of calender type
+    var listfragment = ListFragment()    // use it for delay
     init {
         // because of epoch time
         // ignore
@@ -61,6 +61,7 @@ class AddTaskFragment : BottomSheetDialogFragment() {
                     { dialog, which -> dialog.dismiss(); dismiss() }).setCancelable(false) // must close the dialog
         // dismiss() for bottomsheet
         alertDialogBuilder.show()
+//        listfragment.refreshRecycler()  // use it for delay
     }
 
     private fun addTask() {

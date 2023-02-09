@@ -100,4 +100,9 @@
         <item name="cardBackgroundColor">@color/white</item>
     </style>
 
+    <style name="AlertDialog" parent="android:Theme.Material.Light.Dialog.Alert">
+        <item name="android:colorPrimary">@color/leaf_print_light_green</item>
+        <item name="android:colorAccent">@color/light_blue</item>
+    </style>
+
 </resources>
