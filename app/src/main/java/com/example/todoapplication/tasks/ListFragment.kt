@@ -113,7 +113,7 @@ class ListFragment : BaseFragment() {
         refreshRecycler()
     }
 
-    private fun refreshRecycler() {
+     fun refreshRecycler() {
         Adapter.changeData(context?.let {
             MyDataBase.getDataBase(it).tasksDao().getTasksByDate(currentdate.timeInMillis)
         })
